@@ -20,29 +20,27 @@ interface IAccount{
     removeCustomer();
 }
 
-class SavingAccount extends Account implements IAccount{
-    Min_Balance: number;
+class SavingAccount extends Account implements IAccount {
+    constructor(Acc_no = 1, Balance = 0, public Min_balance = 100) {
+      super(Acc_no, Balance);
+    }
     Date_of_opening: Date;
-    addCustomer() {
-        // throw new Error("Method not implemented.");
-    }
-    removeCustomer() {
-        // throw new Error("Method not implemented.");
-    }
-    
-}
+    addCustomer() {}
+    removeCustomer() {}
+  }
 
-class CurrentAccount extends Account implements IAccount{
-    interest_rate: number;
+class CurrentAccount extends Account implements IAccount {
+    constructor(Acc_no = 1, Balance = 0, public Interest_rate = 10) {
+      super(Acc_no, Balance);
+    }
     Date_of_opening: Date;
-    addCustomer() {
-        // throw new Error("Method not implemented.");
-    }
-    removeCustomer() {
-        // throw new Error("Method not implemented.");
-    }
-    
-}
+    addCustomer() {}
+  
+    removeCustomer() {}
+  }
+
+
+
 
 let saving = new SavingAccount();
 let current = new CurrentAccount();
