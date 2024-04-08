@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="alert alert-success mt-3 w-50 m-auto" *ngIf="valid==true" role="alert">
+    Form is valid
+  </div>
+
+    <div class="alert alert-danger mt-3 w-50 m-auto"  *ngIf="valid==false" role="alert">
+      Form is invalid
+  </div>
+</div>
+
+<div [formGroup]='regForm' class="form">
+  <h2>Registration</h2>
+  <div class="form-group">
+    <input
+    formControlName="name"
+      type="text"
+      name="name"
+      class="form-control"
+      id="exampleInputName1"
+      aria-describedby="NameHelp"
+      placeholder="Enter Name"
+    />
+  </div>
+  @if(!nameValid &&(regForm.controls['name'].dirty || regForm.controls['name'].touched)){
+    <p>Name should be at least 3 characters</p>
+}
+
+  <div class="form-group">
+    <input
+    formControlName="age"
+      type="number"
+      name="age"
+      class="form-control"
+      id="exampleInputNumber1"
+      aria-describedby="NumberHelp"
+      placeholder="Enter Age"
+    />
+  </div>
+  @if(ageValid &&(regForm.controls['age'].dirty || regForm.controls['age'].touched)){
+      <p>Age should be between 10 and 30</p>
+  }
+
+  <div class="form-group">
+    <input
+    formControlName="email"
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter email"
+    />
+  </div>
+  @if(emailValid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)){
+    <p>Invalid Email</p>
+}
+
+  <button (click)="getData()" class="btn">check</button>
+
+</div>

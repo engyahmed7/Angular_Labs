@@ -1,0 +1,32 @@
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (std of studentsDataFromParent; track std.name) {
+    <tr>
+      <td>{{std.name}}</td>
+      <td>{{std.age}}</td>
+    </tr>
+  }
+  </tbody>
+</table>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let std of studentsDataFromParent; track: std.name">
+      <td>{{std.name}}</td>
+      <td>{{std.age}}</td>
+    </tr>
+  </tbody>
+</table> -->

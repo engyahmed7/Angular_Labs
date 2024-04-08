@@ -1,0 +1,14 @@
+<div class="form">
+  <h2>Registration</h2>
+  <input  type="text" name="name" [(ngModel)]="name"  placeholder="Name">
+  @if(name.length <= 3 && name){
+      <p>Name should be at least 3 characters</p>
+  }
+  <input type="number" name="age" [(ngModel)]="age" placeholder="Age">
+  @if(age && (+age < 10 || +age > 30)  ){
+      <p>Age should be between 10 and 30</p>
+  }
+
+  <button class="btn" (click)="addStudent()">Add</button>
+
+</div>
